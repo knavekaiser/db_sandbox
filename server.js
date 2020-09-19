@@ -1,5 +1,4 @@
 const express = require("express");
-// const connectDB = require("./db/Connection");
 const app = express();
 const DB = require("nedb");
 
