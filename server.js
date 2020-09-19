@@ -14,7 +14,7 @@ app.use(express.json());
 app.post("/api", (req, res) => {
   console.log(req.body);
   database.insert({ name: req.body.name });
-  database.find({ name: }, (err, data) => {
+  database.find({}, (err, data) => {
     res.json(data);
   });
 });
