@@ -1,10 +1,10 @@
 const $ = (selector) => document.querySelector(selector);
 
 const list = $("#list");
-$("form").addEventListener("submit", (e) => {
+$("#api").addEventListener("submit", (e) => {
   e.preventDefault();
   const data = {
-    name: $("form #name").value,
+    name: $("#api #name").value,
   };
   const options = {
     method: "POST",
@@ -23,5 +23,18 @@ $("form").addEventListener("submit", (e) => {
         li.textContent = item.name;
         list.appendChild(li);
       });
+    });
+});
+
+$("#db").addEventListener("submit", (e) => {
+  e.preventDefault();
+  const data = {
+    name: $("#db #name").value,
+  };
+  e.target.reset();
+  fetch("/db")
+    .then((res) => res.json())
+    .then((data) => {
+      console.log(data);
     });
 });
