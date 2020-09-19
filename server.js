@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const DB = require("nedb");
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 8000;
 
 const database = new DB("database.db");
 database.loadDatabase();
