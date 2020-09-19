@@ -29,7 +29,6 @@ const PORT = process.env.PORT || 8000;
 const database = new DB("database.db");
 database.loadDatabase();
 
-app.listen(PORT, () => console.log("server just ran"));
 app.use(express.static("public"));
 app.use(express.json());
 
@@ -40,3 +39,8 @@ app.post("/nedb", (req, res) => {
     res.json(data);
   });
 });
+
+const ques = require("./routes/posts");
+app.use("/posts", ques);
+
+app.listen(PORT, () => console.log("server just ran"));

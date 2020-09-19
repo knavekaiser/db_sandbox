@@ -29,7 +29,8 @@ $("#nedb").addEventListener("submit", (e) => {
 $("#mongo").addEventListener("submit", (e) => {
   e.preventDefault();
   const data = {
-    name: $("#mongo #name").value,
+    ques: $("#mongo #ques").value,
+    ans: $("#mongo #ans").value,
   };
   const options = {
     method: "POST",
