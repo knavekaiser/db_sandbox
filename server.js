@@ -3,7 +3,7 @@ const app = express();
 const DB = require("nedb");
 const { Pool } = require("pg");
 const pool = new Pool({
-  connectionString: process.evn.DATABASE_URL || null,
+  connectionString: process.env.DATABASE_URL,
   ssl: {
     rejectUnauthorized: false,
   },
