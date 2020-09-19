@@ -40,7 +40,7 @@ $("#mongo").addEventListener("submit", (e) => {
     body: JSON.stringify(data),
   };
   e.target.reset();
-  fetch("/mongo", options)
+  fetch("/posts/mongo", options)
     .then((res) => res.json())
     .then((data) => {
       console.log("mongo", data);
